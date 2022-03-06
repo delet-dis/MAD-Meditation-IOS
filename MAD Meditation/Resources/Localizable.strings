@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  MAD Meditation
+
+  Created by Igor Efimov on 06.03.2022.
+  
+*/
+
+"Hello" = "Привет";
+"HelloSubText" = "Наслаждайся отборочными. \n Будь внимателен. \n Делай хорошо.";
+"Login" = "Войти в аккаунт";
+"StillNoAccount" = "Еще нет аккаунта?";
+"Register" = "Зарегестрируйтесь";
