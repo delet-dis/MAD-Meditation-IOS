@@ -9,48 +9,56 @@ import SwiftUI
 
 struct OnboardingView: View {
     var body: some View {
-        ZStack {
-            Image("BackgroundImage")
-                .resizable()
-                .scaledToFill()
-            
-            VStack {
-                Image("AppLogo")
+        NavigationView {
+            ZStack(alignment: .center) {
+                Image("BackgroundImage")
                     .resizable()
-                    .frame(width: 420, height: 500, alignment: .center)
+                    .clipped()
                 
-                Text(NSLocalizedString("Hello", comment: "").uppercased())
-                    .foregroundColor(.white)
-                    .font(Font.custom("Alegreya-Bold", size: 34))
-                    .padding(.top, -90)
-                
-                Text(NSLocalizedString("HelloSubText", comment: ""))
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
-                    .padding(.top, -70)
-                    .font(Font.custom("AlegreyaSans-Medium", size: 20))
-                
-                Button {}
-                label: {
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 15)
-                            .frame(width: 300, height: 60, alignment: .center)
-                            .foregroundColor(Colors.secondaryColor)
+                VStack(alignment: .center) {
+                    Image("AppLogo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200, alignment: .center)
                         
-                        Text(NSLocalizedString("Login", comment: ""))
-                            .foregroundColor(.white)
+                    Text(NSLocalizedString("Hello", comment: "").uppercased())
+                        .foregroundColor(.white)
+                        .font(.custom("Alegreya-Bold", size: 34))
+                    
+                    Text(NSLocalizedString("HelloSubText", comment: ""))
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                        .font(.custom("AlegreyaSans-Medium", size: 20))
+                    
+                    Button {}
+                    label: {
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 15)
+                                .frame(width: 300, height: 60, alignment: .center)
+                                .foregroundColor(Colors.secondaryColor)
+                            
+                            Text(NSLocalizedString("Login", comment: ""))
+                                .foregroundColor(.white)
+                                .font(.custom("AlegreyaSans-Medium", size: 25))
+                        }
+                    }
+                    .padding(.top, 70)
+                    
+                        HStack(spacing: 8) {
+                            Text(NSLocalizedString("StillNoAccount", comment: ""))
+                                .foregroundColor(.white)
+                                .font(.custom("AlegreyaSans-Regular", size: 20))
+                            
+                            NavigationLink(destination: RegisterView()){
+                                Text(NSLocalizedString("Register", comment: ""))
+                                    .foregroundColor(.white)
+                                    .font(.custom("AlegreyaSans-Bold", size: 22))
+                            }
                     }
                 }
-                .padding(.top, 70)
-                
-                HStack{
-                    Text(NSLocalizedString("StillNoAccount", comment: ""))
-                    
-                    Text(NSLocalizedString("Register", comment: ""))
-                }
             }
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
     }
 }
 

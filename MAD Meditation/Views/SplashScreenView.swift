@@ -12,11 +12,11 @@ struct SplashScreenView: View {
         ZStack {
             Image("BackgroundImage")
                 .resizable()
-                .scaledToFill()
+                .clipped()
             
             Image("AppLogo")
                 .resizable()
-                .frame(width: 420, height: 500, alignment: .center)
+                .frame(width: 200, height: 210, alignment: .center)
         }
         .ignoresSafeArea()
     }
