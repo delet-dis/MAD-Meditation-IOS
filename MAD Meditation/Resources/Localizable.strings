@@ -12,3 +12,5 @@
 "StillNoAccount" = "Еще нет аккаунта?";
 "Register" = "Зарегистрируйтесь";
 "RegistrationWillBeHere" = "Тут будет регистрация";
+"SignIn" = "Войти";
+"Email" = "Email";
